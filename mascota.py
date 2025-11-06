@@ -24,7 +24,7 @@ class Mascota:
             # Osito muy feliz
             print("""
             ╔════════════════════════════════════╗
-            ║         ʕ•ᴥ•ʔ ⭐                   ║
+            ║         ʕ•ᴥ•ʔ                    ║
             ║       ♡ ¡Súper feliz! ♡           ║
             ║         ╭━━╮                       ║
             ║         ┃  ┃  ¡Me encanta vivir!  ║
@@ -79,15 +79,15 @@ class Mascota:
         if self.experiencia >= exp_necesaria:
             self.nivel += 1
             self.experiencia = 0
-            self.marcar_texto(f"🎉 ¡SUBÍ DE NIVEL! Ahora soy nivel {self.nivel} 🎉")
+            self.marcar_texto(f" ¡SUBÍ DE NIVEL! Ahora soy nivel {self.nivel} ")
             pausa()
 
     def alimentar(self):
         """Aumenta la energía y reduce el hambre"""
         if self.hambre == 0:
-            self.marcar_texto("¡No tengo hambre! Mi pancita está llena 🍽️")
+            self.marcar_texto("¡No tengo hambre! Mi pancita está llena ")
         else:
-            comidas = ["manzanas 🍎", "pescado 🐟", "miel 🍯", "bayas 🫐", "nueces 🥜"]
+            comidas = ["manzanas ", "pescado ", "miel ", "bayas ", "nueces "]
             comida = random.choice(comidas)
             
             self.energia += 20
@@ -107,7 +107,7 @@ class Mascota:
     def jugar(self):
         """Reduce la energía pero aumenta la felicidad"""
         if self.energia <= 15:
-            self.marcar_texto("¡Estoy demasiado cansado para jugar! 😴 Necesito descansar")
+            self.marcar_texto("¡Estoy demasiado cansado para jugar!  Necesito descansar")
         else:
             juegos = ["a las escondidas", "con una pelota", "a perseguir mariposas", "en el río", "con mis amigos"]
             juego = random.choice(juegos)
@@ -123,7 +123,7 @@ class Mascota:
             if self.hambre > 100:
                 self.hambre = 100
                 
-            self.marcar_texto(f"¡Qué divertido jugar {juego}! 🎮 | Felicidad: {self.felicidad}")
+            self.marcar_texto(f"¡Qué divertido jugar {juego}!  | Felicidad: {self.felicidad}")
             self.ganar_experiencia(10)
 
     def descansar(self):
@@ -141,10 +141,10 @@ class Mascota:
                 self.felicidad = 100
                 
             frases_dormir = [
-                "Zzz... Soñé que volaba 💭",
-                "Zzz... ¡Qué buena siesta! 😴",
-                "Zzz... Soñé con aventuras ✨",
-                "Zzz... Me siento renovado 🌟"
+                "Zzz... Soñé que volaba ",
+                "Zzz... ¡Qué buena siesta! ",
+                "Zzz... Soñé con aventuras ",
+                "Zzz... Me siento renovado "
             ]
             self.marcar_texto(f"{random.choice(frases_dormir)} | Energía: {self.energia}")
             self.ganar_experiencia(3)
@@ -170,7 +170,7 @@ class Mascota:
             if self.hambre > 100:
                 self.hambre = 100
                 
-            self.marcar_texto(f"¡Entrenamiento completado {entrenamiento}! 💪")
+            self.marcar_texto(f"¡Entrenamiento completado {entrenamiento}! ")
             self.ganar_experiencia(20)
 
     def mimar(self):
@@ -182,7 +182,7 @@ class Mascota:
         mimos = ["abrazos", "caricias", "palabras bonitas", "cosquillas", "besos"]
         mimo = random.choice(mimos)
         
-        self.marcar_texto(f"¡Me diste {mimo}! Me siento muy querido 💖 | Felicidad: {self.felicidad}")
+        self.marcar_texto(f"¡Me diste {mimo}! Me siento muy querido | Felicidad: {self.felicidad}")
         self.ganar_experiencia(5)
 
     def mostrar_estado(self):
@@ -210,12 +210,12 @@ class Mascota:
         print(f"\n╔{'═' * 60}╗")
         print(f"║  {'ESTADO DE ' + self.nombre.upper():^56}  ║")
         print(f"╠{'═' * 60}╣")
-        print(f"║  🎂 Edad: {self.edad} días    {'⭐ Nivel: ' + str(self.nivel):>38}  ║")
+        print(f"║   Edad: {self.edad} días    {'⭐ Nivel: ' + str(self.nivel):>38}  ║")
         print(f"╠{'═' * 60}╣")
-        print(f"║  ⚡ Energía:   {self.energia:>3}/100  [{barras_energia}{espacios_energia}]  ║")
-        print(f"║  😊 Felicidad: {self.felicidad:>3}/100  [{barras_felicidad}{espacios_felicidad}]  ║")
-        print(f"║  🍽️  Hambre:    {self.hambre:>3}/100  [{barras_hambre}{espacios_hambre}]  ║")
-        print(f"║  📊 EXP:       {self.experiencia:>3}/{exp_necesaria:<3}  [{barras_exp}{espacios_exp}]  ║")
+        print(f"║  Energía:   {self.energia:>3}/100  [{barras_energia}{espacios_energia}]  ║")
+        print(f"║  Felicidad: {self.felicidad:>3}/100  [{barras_felicidad}{espacios_felicidad}]  ║")
+        print(f"║  Hambre:    {self.hambre:>3}/100  [{barras_hambre}{espacios_hambre}]  ║")
+        print(f"║  EXP:       {self.experiencia:>3}/{exp_necesaria:<3}  [{barras_exp}{espacios_exp}]  ║")
         print(f"╚{'═' * 60}╝")
 
 
@@ -224,13 +224,13 @@ def mostrar_menu():
     print("\n╔" + "═" * 50 + "╗")
     print("║" + "MENÚ DE ACCIONES".center(50) + "║")
     print("╠" + "═" * 50 + "╣")
-    print("║  1. 🍎  Alimentar                             ║")
-    print("║  2. 🎮  Jugar                                 ║")
-    print("║  3. 😴  Descansar                             ║")
-    print("║  4. 💪  Entrenar (¡NUEVO!)                    ║")
-    print("║  5. 💖  Mimar (¡NUEVO!)                       ║")
-    print("║  6. 📊  Mostrar estado completo               ║")
-    print("║  7. 🚪  Salir                                 ║")
+    print("║  1. Alimentar                             ║")
+    print("║  2. Jugar                                 ║")
+    print("║  3. Descansar                             ║")
+    print("║  4. Entrenar (¡NUEVO!)                    ║")
+    print("║  5. Mimar (¡NUEVO!)                       ║")
+    print("║  6. Mostrar estado completo               ║")
+    print("║  7. Salir                                 ║")
     print("╚" + "═" * 50 + "╝")
 
 
@@ -240,12 +240,12 @@ def main():
     
     # Mensaje de bienvenida mejorado
     print("\n╔" + "═" * 60 + "╗")
-    print("║" + " 🐻 ¡BIENVENIDO A TU MASCOTA VIRTUAL! 🐻 ".center(60) + "║")
+    print("║" + "  ¡BIENVENIDO A TU MASCOTA VIRTUAL!  ".center(60) + "║")
     print("║" + " Cuida, juega y haz crecer a tu mascota ".center(60) + "║")
     print("╚" + "═" * 60 + "╝\n")
     
     # Pedir el nombre de la mascota
-    nombre = input("  ✨ Elige un nombre para tu mascota: ").strip()
+    nombre = input("   Elige un nombre para tu mascota: ").strip()
     
     if not nombre:
         nombre = "Osito"
@@ -257,7 +257,7 @@ def main():
     time.sleep(1)
     limpiar_pantalla()
     
-    print(f"\n  🎉 ¡Perfecto! Tu mascota '{mascota.nombre}' ha nacido 🎉")
+    print(f"\n   ¡Perfecto! Tu mascota '{mascota.nombre}' ha nacido ")
     mascota.dibujar_mascota()
     pausa()
     
@@ -293,12 +293,12 @@ def main():
         elif opcion == "7":
             limpiar_pantalla()
             print("\n╔" + "═" * 60 + "╗")
-            print("║" + f" ¡Hasta luego! {mascota.nombre} te extrañará mucho... 👋 ".center(60) + "║")
+            print("║" + f" ¡Hasta luego! {mascota.nombre} te extrañará mucho...  ".center(60) + "║")
             print("║" + f" Llegó al nivel {mascota.nivel} y vivió {mascota.edad} días ".center(60) + "║")
             print("╚" + "═" * 60 + "╝\n")
             break
         else:
-            print("\n  ❌ Opción inválida, intenta de nuevo.")
+            print("\n  Opción inválida, intenta de nuevo.")
         
         pausa()
 
